@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.012em;
+    color-scheme: dark;
+  }
+
+  code, kbd, samp, pre {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  body {
+    background-color: #070B13;
+    color: #E2E8F0;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  /* Ultra-refined, Linear/Stripe style subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.22);
+  }
+
+  /* Enterprise layered dark surfaces (Linear / Stripe / Vercel aesthetic) */
+  .glass-panel {
+    background: rgba(14, 20, 36, 0.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  .glass-card {
+    background: rgba(12, 18, 32, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.35);
+  }
+
+  .glass-card-interactive {
+    background: rgba(12, 18, 32, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card-interactive:hover {
+    background: rgba(16, 24, 44, 0.85);
+    border-color: rgba(56, 189, 248, 0.25);
+    box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.5), 0 0 20px -2px rgba(56, 189, 248, 0.1);
+  }
+
+  .glass-input {
+    background: rgba(7, 11, 20, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+  }
+
+  .glass-input:focus, .glass-input:focus-within {
+    border-color: rgba(56, 189, 248, 0.55);
+    background: rgba(9, 14, 26, 0.95);
+    box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.25), 0 0 20px -3px rgba(56, 189, 248, 0.2);
+  }
+
+  /* Subtle background grid pattern */
+  .bg-grid-subtle {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  }
+
+  .bg-dot-pattern {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-invoice, #printable-invoice * {
+    visibility: visible;
+  }
+  #printable-invoice {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: white !important;
+    color: black !important;
+  }
+}

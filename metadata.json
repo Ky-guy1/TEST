@@ -1,0 +1,6 @@
+{
+  "name": "NAWASA Grenada Water Portal",
+  "description": "Futuristic chatbot landing page and water bill tracking portal for NAWASA Grenada.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
